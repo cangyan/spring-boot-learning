@@ -1,12 +1,13 @@
 package com.huuinn.demo.controller;
 
 import com.huuinn.demo.RequestMappings;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class SimpleController {
@@ -15,5 +16,14 @@ public class SimpleController {
     @ResponseBody
     public String sayHello() {
         return "hello";
+    }
+
+    @RequestMapping(value = RequestMappings.HELLO_JSON, method = RequestMethod.GET)
+    public @ResponseBody
+    Map<String, String> sayHelloJson() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("key", "hello");
+
+        return map;
     }
 }
