@@ -9,4 +9,6 @@ public interface RequestMappings {
     String TEST_PATH_PARAMS = "testPathParams/{name}";
 
     String TEST_EXCEPTION = "testException";
+
+    String TEST_REQUEST_PARAMS = "testRequestParams";
 }

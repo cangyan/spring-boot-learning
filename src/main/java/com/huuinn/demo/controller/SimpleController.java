@@ -30,7 +30,8 @@ public class SimpleController {
     }
 
     @RequestMapping(value = RequestMappings.TEST_PATH_PARAMS, method = RequestMethod.GET)
-    public @ResponseBody Map<String, String> testPathParams(@PathVariable(value = "name") String name) {
+    public @ResponseBody
+    Map<String, String> testPathParams(@PathVariable(value = "name") String name) {
         HashMap<String, String> map = new HashMap<>();
         map.put("name", name);
 
@@ -38,7 +39,8 @@ public class SimpleController {
     }
 
     @RequestMapping(value = RequestMappings.TEST_EXCEPTION, method = RequestMethod.GET)
-    public @ResponseBody Map<String, String> testException() throws CustomException {
+    public @ResponseBody
+    Map<String, String> testException() throws CustomException {
         throw new CustomException();
     }
 
@@ -53,5 +55,16 @@ public class SimpleController {
         payload.setData(map);
 
         return payload;
+    }
+
+
+    @RequestMapping(value = RequestMappings.TEST_REQUEST_PARAMS, method = RequestMethod.GET)
+    public @ResponseBody
+    Map<String, String> testRequestParams(@RequestParam(value = "name", required = true) String name, @RequestParam(value = "age", required = false, defaultValue = "10") String age) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("name", name);
+        map.put("age", age);
+
+        return map;
     }
 }
