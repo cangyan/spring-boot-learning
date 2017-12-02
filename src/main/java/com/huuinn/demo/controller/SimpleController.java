@@ -41,4 +41,17 @@ public class SimpleController {
     public @ResponseBody Map<String, String> testException() throws CustomException {
         throw new CustomException();
     }
+
+    @ExceptionHandler(value = CustomException.class)
+    @ResponseBody
+    public Payload<Object> errorHandler(HttpServletRequest request, CustomException e) throws Exception {
+        Payload<Object> payload = new Payload<>();
+        payload.setStatus(ServiceStatusCode.TEST_ERROR);
+        payload.setMessage(e.getMessage());
+        HashMap<String, String> map = new HashMap<>();
+        map.put("url", request.getRequestURL().toString());
+        payload.setData(map);
+
+        return payload;
+    }
 }
