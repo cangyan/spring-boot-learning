@@ -7,4 +7,6 @@ public interface RequestMappings {
     String HELLO_JSON = "helloJson";
 
     String TEST_PATH_PARAMS = "testPathParams/{name}";
+
+    String TEST_EXCEPTION = "testException";
 }

@@ -1,12 +1,13 @@
 package com.huuinn.demo.controller;
 
 import com.huuinn.demo.RequestMappings;
+import com.huuinn.demo.ServiceStatusCode;
+import com.huuinn.demo.common.CustomException;
+import com.huuinn.demo.common.Payload;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,5 +35,10 @@ public class SimpleController {
         map.put("name", name);
 
         return map;
+    }
+
+    @RequestMapping(value = RequestMappings.TEST_EXCEPTION, method = RequestMethod.GET)
+    public @ResponseBody Map<String, String> testException() throws CustomException {
+        throw new CustomException();
     }
 }
