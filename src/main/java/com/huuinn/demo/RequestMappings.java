@@ -11,4 +11,6 @@ public interface RequestMappings {
     String TEST_EXCEPTION = "testException";
 
     String TEST_REQUEST_PARAMS = "testRequestParams";
+
+    String TEST_CORS = "testCORS";
 }

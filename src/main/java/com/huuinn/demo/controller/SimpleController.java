@@ -67,4 +67,14 @@ public class SimpleController {
 
         return map;
     }
+
+    @CrossOrigin
+    @RequestMapping(value = RequestMappings.TEST_CORS)
+    public @ResponseBody Map<String, String> testCORS() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("id", "1");
+        map.put("content", "test cors");
+
+        return map;
+    }
 }
