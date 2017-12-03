@@ -77,4 +77,13 @@ public class SimpleController {
 
         return map;
     }
+
+    @RequestMapping(value = RequestMappings.TEST_GLOBAL_CORS)
+    public @ResponseBody Map<String, String> testGlobalCORS() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("id", "2");
+        map.put("content", "test global cors");
+
+        return map;
+    }
 }

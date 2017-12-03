@@ -13,4 +13,6 @@ public interface RequestMappings {
     String TEST_REQUEST_PARAMS = "testRequestParams";
 
     String TEST_CORS = "testCORS";
+
+    String TEST_GLOBAL_CORS = "testGlobalCORS";
 }
