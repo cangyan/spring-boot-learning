@@ -19,4 +19,6 @@ public interface RequestMappings {
     String TEST_ENV = "testEnv";
 
     String USER = "user";
+
+    String TEST_MULTI_DATA_SOURCE = "testMultiDataSource";
 }

@@ -1,7 +1,7 @@
 app:
   env: sit
 
-debug: true
+debug: false
 
 spring:
   jpa:
@@ -11,6 +11,10 @@ spring:
     url: jdbc:mysql://localhost:3306/learning
     username: learning
     password: learning
+    learning:
+      url: jdbc:mysql://localhost:3306/learning
+      username: learning
+      password: learning
 
 ---
 spring:
