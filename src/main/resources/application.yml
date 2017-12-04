@@ -1,0 +1,22 @@
+app:
+  env: dev
+
+debug: false
+
+---
+spring:
+  profiles: dev
+
+app:
+  env: dev
+
+debug: true
+
+---
+spring:
+  profiles: prod
+
+app:
+  env: prod
+
+debug: false
