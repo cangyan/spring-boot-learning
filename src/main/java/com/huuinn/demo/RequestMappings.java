@@ -17,4 +17,6 @@ public interface RequestMappings {
     String TEST_GLOBAL_CORS = "testGlobalCORS";
 
     String TEST_ENV = "testEnv";
+
+    String USER = "user";
 }

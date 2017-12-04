@@ -1,16 +1,16 @@
 app:
-  env: dev
-
-debug: false
-
----
-spring:
-  profiles: dev
-
-app:
-  env: dev
+  env: sit
 
 debug: true
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/learning
+    username: learning
+    password: learning
 
 ---
 spring:
