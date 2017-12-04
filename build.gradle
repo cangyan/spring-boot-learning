@@ -22,6 +22,9 @@ repositories {
 	mavenCentral()
 }
 
+processResources {
+	expand(project.properties)
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
