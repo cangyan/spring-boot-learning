@@ -1,6 +1,8 @@
 package com.huuinn.demo.controller;
 
 import com.huuinn.demo.RequestMappings;
+import com.huuinn.demo.ServiceStatusCode;
+import com.huuinn.demo.common.Payload;
 import com.huuinn.demo.sample.db.User;
 import com.huuinn.demo.sample.db.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,13 @@ public class UserController {
 
     //
     @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody Iterable<User> list() {
-        return userRepository.findAll();
+    public @ResponseBody
+    Payload<Iterable<User>> list() {
+        Payload<Iterable<User>> payload = new Payload<>();
+        payload.setStatus(ServiceStatusCode.OK);
+        payload.setMessage("success");
+        payload.setData(userRepository.findAll());
+
+        return payload;
     }
 }
