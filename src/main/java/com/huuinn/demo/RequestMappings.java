@@ -23,4 +23,6 @@ public interface RequestMappings {
     String TEST_MULTI_DATA_SOURCE = "testMultiDataSource";
 
     String TEST_JPA_MULTI_DB = "testJpaMultiDB";
+
+    String TEST_MULTI_DB = "vendor";
 }

@@ -6,7 +6,7 @@ debug: false
 spring:
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       dialect: org.hibernate.dialect.MySQLDialect
   datasource:
     url: jdbc:mysql://localhost:3306/learning
@@ -16,6 +16,10 @@ spring:
       url: jdbc:mysql://localhost:3306/learning
       username: learning
       password: learning
+    common:
+      url: jdbc:mysql://localhost:3306/common
+      username: common
+      password: common
 
 ---
 spring:
