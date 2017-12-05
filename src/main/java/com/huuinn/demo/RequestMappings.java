@@ -21,4 +21,6 @@ public interface RequestMappings {
     String USER = "user";
 
     String TEST_MULTI_DATA_SOURCE = "testMultiDataSource";
+
+    String TEST_JPA_MULTI_DB = "testJpaMultiDB";
 }
