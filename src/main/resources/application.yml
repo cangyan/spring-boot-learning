@@ -20,7 +20,11 @@ spring:
       url: jdbc:mysql://localhost:3306/common
       username: common
       password: common
-
+  cache:
+    type: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
 ---
 spring:
   profiles: prod

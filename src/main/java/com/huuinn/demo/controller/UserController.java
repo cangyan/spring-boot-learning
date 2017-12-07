@@ -6,6 +6,7 @@ import com.huuinn.demo.common.Payload;
 import com.huuinn.demo.sample.db.User;
 import com.huuinn.demo.sample.db.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,8 +30,8 @@ public class UserController {
         return "saved";
     }
 
-    //
     @RequestMapping(method = RequestMethod.GET)
+    @Cacheable("userList")
     public @ResponseBody
     Payload<Iterable<User>> list() {
         Payload<Iterable<User>> payload = new Payload<>();

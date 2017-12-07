@@ -4,6 +4,7 @@ import com.huuinn.demo.RequestMappings;
 import com.huuinn.demo.ServiceStatusCode;
 import com.huuinn.demo.common.CustomException;
 import com.huuinn.demo.common.Payload;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ public class SimpleController {
 
     @RequestMapping(value = RequestMappings.HELLO, method = RequestMethod.GET)
     @ResponseBody
+    @Cacheable("say-hello")
     public String sayHello() {
         return "hello";
     }
