@@ -17,7 +17,7 @@ public class SimpleController {
 
     @RequestMapping(value = RequestMappings.HELLO, method = RequestMethod.GET)
     @ResponseBody
-    @Cacheable("say-hello")
+    @Cacheable(value = "say-hello")
     public String sayHello() {
         return "hello";
     }
